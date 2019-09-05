@@ -41,7 +41,7 @@ module.exports = {
   styleguideDir: 'docs',
   pagePerSection: true,
   ribbon: {
-    url: 'https://github.com/crv/vue-cutdown'
+    url: 'https://github.com/LishiJ/vue-cutdown'
   },
   sections,
   webpackConfig: {
