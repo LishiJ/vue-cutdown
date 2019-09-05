@@ -1,6 +1,6 @@
 branches:
   only:
-    - master
+  - master
 language: node_js
 node_js:
 - lts/*
@@ -10,19 +10,26 @@ install:
 - yarn --frozen-lockfile
 - yarn test
 script:
-- ./build.sh
+- "./build.sh"
 after_success:
 - GREN_GITHUB_TOKEN=$GITHUB_TOKEN yarn release
 after_script:
-- ./notify.sh
+- "./notify.sh"
 cache: yarn
 deploy:
-- provider: pages
-  local-dir: docs
-  github-token: $GITHUB_TOKEN 
-  skip-cleanup: true
-  keep-history: true
-- provider: npm
-  email: lishijie519@dingtalk.com
-  api_key: $NPM_TOKEN
-  skip-cleanup: true
+  matrix:
+  - provider: pages
+    local-dir: docs
+    github-token: "$GITHUB_TOKEN"
+    skip-cleanup: true
+    keep-history: true
+    on:
+      branch: master
+  - provider: npm
+    email: lishijie519@dingtalk.com
+    api_key: "$NPM_TOKEN"
+    skip-cleanup: true
+  github-token:
+    secure: VzzDOpeSbbS63uBqAwrTKcYUNr9WocpGZlaOwX3UljJnYooSodapzl1DKiUrTrz6rqgNHT2A/PWPdp2sD7Qgy5+2O61kc5SWS/tvhXemjW97PQrm8CUPB4+KUcLiclJloByrMUWooPddCofioskuaOb8DMeALWrQISVl3vWBrUGCTvf7xVODSWvgXWw8vbbfEzrzxzWHTKHIEZ/7vH0U7JSvuRuSvP0ia3ICWxzNJkOjTg/iJsoR94ap5qtyChfEn8Xw7L34mONQMX85TkT+ebSYNAo8X1HAVcbV6fJdz3xhlh6v80lIMurUBbGrTBUuRUMJmjSzEUNJPUiombxOUKUxOWjekRt/+8Uk5xGXz1l6RtSB9kZEg54Caa5WGicXK+oTp6AT1gJ8srfu0aUMn+FslhvNKoDHUj1acCsKI/k+bH8Kj2P6Q+l402nU9jSEeY6imy6OU2J5LugtvIs+c0znS4v1h/wLLdef6rFGzOtTTLgDx/gKCpQA4vDW34bgQOqbtGcZkySTLCjtZynwSPrfBE/4NqnKcIeNEh1DYgyJ12LAplXHYUhyStoD56AeypTejXvQvOEoRbTe39tKDvnbjenieiaAZ9WVQQ9kep5q29IlKzOkF4chibLQgcz908BR+M6n6mK25985jnvM5qVnxtYe29hG0+TgqFZWNMM=
+  api_key:
+    secure: NGLEtMFGAG6my+PXhrhNqsjQa/QKm4fnbf+OU1WSWv+DQeyyOuVPXqLxvqnlbvAodO27eP9IPsJHeTv9bEc7Uja1j5R7EA5MXQFYQ3ZG3a1glY6wfJMIMfehHp0wpnlAWXNip7dxF766I+BgSJpVZZvFbNdymhBYxY9IaHyd4IbDajnciInmMa7n8eooh4XIMfQAHfS53/n1q0auWZ97WKAmj3dVCFhwBhzVJjKeUsqFH1aT2fQuLwDKSzAQU4HvrEFL+K+6L1dNrwiQBVcR7sSUdq9oaTfB4rZqbAH1N3DotNO36AxORIRdDqHmWZrzpVdi3yKPL78X6FX8w5zNlWC7C3IO8MKcnZ6qKkk66WvVYMrStukb6MemTjt1cmtF2YgV6VKYhiDfaaHchXPry2+uB51EPXzyeMK9+pxsoDmTkihIVnAVJpQD0eNT0t0LC+c0gw2XYalvQrj0edZHY00s3cNLcZpgGU/JstbS0LNjYGmMylXnJGmgFujlG8gCAMxVxMixF1QMd8i9I9LPw7Z3A58S3Jb/0Kn2h8ThFtyke2AAPimCwSSroflGMd6BPvE/jVBIk1hF/FeRZv/FOPV2+SwJkh0OrzJoN0oXI57NlBl5a1KBGc3GyswD68HUnO4dsqIQv32Z4IaIOrMgGz/QPSkQtj0lM8bxhlYUNqM=
