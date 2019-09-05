@@ -1,6 +1,6 @@
 <template>
   <div class="vue-cutdown">
-    hello
+    Hello VueCutdown
   </div>
 </template>
 
