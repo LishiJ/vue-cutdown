@@ -18,14 +18,14 @@ after_script:
 cache: yarn
 deploy:
   matrix:
-  - provider: pages
-    target_branch: master
-    local-dir: docs
-    github-token: "$GITHUB_TOKEN"
-    skip-cleanup: true
-    keep-history: true
-    on:
-      branch: master
+  # - provider: pages
+  #   target_branch: master
+  #   local-dir: docs
+  #   github-token: "$GITHUB_TOKEN"
+  #   skip-cleanup: true
+  #   keep-history: true
+  #   on:
+  #     branch: master
   # - provider: npm
   #   email: lishijie519@dingtalk.com
   #   api_key: "$NPM_TOKEN"
