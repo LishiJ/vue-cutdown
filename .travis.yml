@@ -10,11 +10,11 @@ install:
 - yarn --frozen-lockfile
 - yarn test
 script:
-- "./build.sh"
+- bash ./build.sh
 after_success:
 - GREN_GITHUB_TOKEN=$GITHUB_TOKEN yarn release
 after_script:
-- "./notify.sh"
+- bash ./notify.sh
 cache: yarn
 matrix:
   deploy:
