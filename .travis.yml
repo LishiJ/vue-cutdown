@@ -19,16 +19,15 @@ cache: yarn
 matrix:
   deploy:
   - provider: pages
-    target_branch: master
     local-dir: docs
-    github-token: "$GITHUB_TOKEN"
+    github-token: $GITHUB_TOKEN
     skip-cleanup: true
     keep-history: true
     on:
       branch: master
   - provider: npm
     email: lishijie519@dingtalk.com
-    api_key: "$NPM_TOKEN"
+    api_key: $NPM_TOKEN
     skip-cleanup: true
   github-token:
     secure: VzzDOpeSbbS63uBqAwrTKcYUNr9WocpGZlaOwX3UljJnYooSodapzl1DKiUrTrz6rqgNHT2A/PWPdp2sD7Qgy5+2O61kc5SWS/tvhXemjW97PQrm8CUPB4+KUcLiclJloByrMUWooPddCofioskuaOb8DMeALWrQISVl3vWBrUGCTvf7xVODSWvgXWw8vbbfEzrzxzWHTKHIEZ/7vH0U7JSvuRuSvP0ia3ICWxzNJkOjTg/iJsoR94ap5qtyChfEn8Xw7L34mONQMX85TkT+ebSYNAo8X1HAVcbV6fJdz3xhlh6v80lIMurUBbGrTBUuRUMJmjSzEUNJPUiombxOUKUxOWjekRt/+8Uk5xGXz1l6RtSB9kZEg54Caa5WGicXK+oTp6AT1gJ8srfu0aUMn+FslhvNKoDHUj1acCsKI/k+bH8Kj2P6Q+l402nU9jSEeY6imy6OU2J5LugtvIs+c0znS4v1h/wLLdef6rFGzOtTTLgDx/gKCpQA4vDW34bgQOqbtGcZkySTLCjtZynwSPrfBE/4NqnKcIeNEh1DYgyJ12LAplXHYUhyStoD56AeypTejXvQvOEoRbTe39tKDvnbjenieiaAZ9WVQQ9kep5q29IlKzOkF4chibLQgcz908BR+M6n6mK25985jnvM5qVnxtYe29hG0+TgqFZWNMM=
