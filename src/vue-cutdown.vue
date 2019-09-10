@@ -146,7 +146,6 @@ export default {
         : this.endText
     },
     hiddenTime() {
-      console.log(this.cutdown_type)
       const {cutdown_type} = this
       return (
         (!this.showTimeBefore && cutdown_type === 'start') ||
@@ -226,7 +225,7 @@ export default {
       let time_distance = end_point - start_point
 
       // get day,hour,minutes,seconds
-      if (time_distance >= 0) {
+      if (time_distance > 0) {
         // this.cutdown.show = true;
         cutdown.day = Math.floor(time_distance / 86400000)
         time_distance -= cutdown.day * 86400000

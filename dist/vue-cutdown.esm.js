@@ -23,7 +23,7 @@ var now = new Date().getTime();
 var script = {
   name: 'VueCutdown',
   props: {
-    /** 
+    /**
      * before cutdown show time
      */
     showTimeBefore: {
@@ -31,7 +31,7 @@ var script = {
       "default": true
     },
 
-    /** 
+    /**
      * after cutdown show time
      */
     showTimeAfter: {
@@ -39,7 +39,7 @@ var script = {
       "default": true
     },
 
-    /** 
+    /**
      * Current time
      */
     currentTime: {
@@ -47,7 +47,7 @@ var script = {
       "default": now
     },
 
-    /** 
+    /**
      * Start time
      */
     startTime: {
@@ -55,7 +55,7 @@ var script = {
       "default": now
     },
 
-    /** 
+    /**
      * End time
      */
     endTime: {
@@ -63,7 +63,7 @@ var script = {
       "default": now
     },
 
-    /** 
+    /**
      * tip message display
      */
     showTip: {
@@ -71,7 +71,7 @@ var script = {
       "default": true
     },
 
-    /** 
+    /**
      * Distance Start Text
      */
     startText: {
@@ -79,7 +79,7 @@ var script = {
       "default": 'Distance Start'
     },
 
-    /** 
+    /**
      * Distance End Text
      */
     runningText: {
@@ -87,7 +87,7 @@ var script = {
       "default": 'Distance End'
     },
 
-    /** 
+    /**
      * Over Text
      */
     endText: {
@@ -95,7 +95,7 @@ var script = {
       "default": "It's over"
     },
 
-    /** 
+    /**
      * Distance Start Text
      */
     tipSepartor: {
@@ -153,7 +153,6 @@ var script = {
       return this.cutdown_type === 'start' ? this.startText : this.cutdown_type === 'run' ? this.runningText : this.endText;
     },
     hiddenTime: function hiddenTime() {
-      console.log(this.cutdown_type);
       var cutdown_type = this.cutdown_type;
       return !this.showTimeBefore && cutdown_type === 'start' || !this.showTimeAfter && cutdown_type === 'end';
     },
@@ -209,7 +208,7 @@ var script = {
      * run cutdown event
      * @params end_point {Number}  time end point
      * @params start_point {Number} time start point
-     * @params flg {Boolean} 
+     * @params flg {Boolean}
      */
     runCutdown: function runCutdown(end_point, start_point, flg) {
       var _this = this;
@@ -226,13 +225,13 @@ var script = {
      * calc day,hour,minutes,seconds
      * @params end_point {Number}  time end point
      * @params start_point {Number} time start point
-     * @params flg {Boolean} 
+     * @params flg {Boolean}
      */
     calcCutdown: function calcCutdown(end_point, start_point, flg) {
       var cutdown = this.cutdown;
       var time_distance = end_point - start_point; // get day,hour,minutes,seconds
 
-      if (time_distance >= 0) {
+      if (time_distance > 0) {
         // this.cutdown.show = true;
         cutdown.day = Math.floor(time_distance / 86400000);
         time_distance -= cutdown.day * 86400000;
@@ -241,18 +240,18 @@ var script = {
         cutdown.minutes = Math.floor(time_distance / 60000);
         time_distance -= cutdown.minutes * 60000;
         cutdown.seconds = Math.floor(time_distance / 1000).toFixed(0);
-        time_distance -= cutdown.seconds * 1000; // 
+        time_distance -= cutdown.seconds * 1000; //
 
         if (cutdown.hour < 10) {
-          cutdown.hour = "0" + cutdown.hour;
+          cutdown.hour = '0' + cutdown.hour;
         }
 
         if (cutdown.minutes < 10) {
-          cutdown.minutes = "0" + cutdown.minutes;
+          cutdown.minutes = '0' + cutdown.minutes;
         }
 
         if (cutdown.seconds < 10) {
-          cutdown.seconds = "0" + cutdown.seconds;
+          cutdown.seconds = '0' + cutdown.seconds;
         }
       } else if (flg) {
         clearInterval(this.timer);
@@ -268,7 +267,7 @@ var script = {
      * @public
      */
     onStart: function onStart() {
-      console.log("start...");
+      console.log('start...');
       this.cutdown_type = 'run';
       this.$emit('onStart');
     },
@@ -278,7 +277,7 @@ var script = {
      * @public
      */
     onEnd: function onEnd() {
-      console.log("end...");
+      console.log('end...');
       this.cutdown_type = 'end';
       this.$emit('onEnd');
     }
@@ -446,7 +445,7 @@ __vue_render__._withStripped = true;
 
 var __vue_inject_styles__ = function __vue_inject_styles__(inject) {
   if (!inject) return;
-  inject("data-v-e1f9098e_0", {
+  inject("data-v-57fa8d86_0", {
     source: ".cutdown i {\n  font-style: normal;\n}\n",
     map: {
       "version": 3,
