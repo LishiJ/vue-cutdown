@@ -1,12 +1,12 @@
 {
   "name": "@crv/vue-cutdown",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "📦 Cutdown plugin for Vue2.x",
-  "author": "https://github.com/LishiJ",
+  "author": "https://github.com/seiwhale",
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/LishiJ/vue-cutdown.git"
+    "url": "https://github.com/seiwhale/vue-cutdown.git"
   },
   "keywords": [
     "vue",
