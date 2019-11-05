@@ -84,4 +84,4 @@ export default {
 </script>
 ```
 
-[查看更多配置项 >>](https://github.com/LishiJ/vue-cutdown)
+[查看更多配置项 >>](https://github.com/seiwhale/vue-cutdown)
