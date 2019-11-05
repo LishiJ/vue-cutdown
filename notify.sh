@@ -5,7 +5,7 @@ then
   exit 1
 fi
 
-url=https://api.github.com/repos/LishiJ/vue-cutdown/releases/latest
+url=https://api.github.com/repos/seiwhale/vue-cutdown/releases/latest
 resp_tmp_file=resp.tmp
 
 curl -H "Authorization: token $GITHUB_TOKEN" $url > $resp_tmp_file

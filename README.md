@@ -1,10 +1,10 @@
 # vue-cutdown
 
-[![Build Status](https://badgen.net/travis/LishiJ/vue-cutdown/master)](https://travis-ci.org/LishiJ/vue-cutdown)
+[![Build Status](https://badgen.net/travis/seiwhale/vue-cutdown/master)](https://travis-ci.org/seiwhale/vue-cutdown)
 [![NPM Download](https://badgen.net/npm/dm/@crv/vue-cutdown)](https://www.npmjs.com/package/@crv/vue-cutdown)
 [![NPM Version](https://badgen.net/npm/v/@crv/vue-cutdown)](https://www.npmjs.com/package/@crv/vue-cutdown)
-[![NPM License](https://badgen.net/npm/license/@crv/vue-cutdown)](https://github.com/LishiJ/vue-cutdown/blob/master/LICENSE)
-[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](https://github.com/LishiJ/vue-cutdown/pulls)
+[![NPM License](https://badgen.net/npm/license/@crv/vue-cutdown)](https://github.com/seiwhale/vue-cutdown/blob/master/LICENSE)
+[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](https://github.com/seiwhale/vue-cutdown/pulls)
 [![Automated Release Notes by gren](https://img.shields.io/badge/%F0%9F%A4%96-release%20notes-00B2EE.svg)](https://github-tools.github.io/github-release-notes/)
 
 ## Table of Contents
@@ -26,7 +26,7 @@
 
 ## Demo
 
-[Overview](https://lishij.github.io/vue-cutdown/)
+[Overview](https://seiwhale.github.io/vue-cutdown/)
 
 [⬆ Back to Top](#table-of-contents)
 
@@ -61,7 +61,7 @@
 
 ## Links
 
-- [docs](https://github.io/LishiJ/vue-cutdown/)
+- [docs](https://github.io/seiwhale/vue-cutdown/)
 
 [⬆ Back to Top](#table-of-contents)
 
