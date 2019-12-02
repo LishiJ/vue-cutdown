@@ -1,37 +1,37 @@
 {
-  "name": "@crv/vue-cutdown",
-  "version": "0.0.3",
-  "description": "📦 Cutdown plugin for Vue2.x",
+  "name": "@crv/vue-countdown",
+  "version": "0.0.1",
+  "description": "📦 Countdown plugin for Vue2.x",
   "author": "https://github.com/seiwhale",
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/seiwhale/vue-cutdown.git"
+    "url": "https://github.com/seiwhale/vue-countdown.git"
   },
   "keywords": [
     "vue",
     "sfc",
     "component",
-    "cutdown"
+    "countdown"
   ],
   "files": [
     "src",
     "dist"
   ],
-  "main": "dist/vue-cutdown.umd.js",
-  "module": "dist/vue-cutdown.esm.js",
-  "unpkg": "dist/vue-cutdown.min.js",
+  "main": "dist/vue-countdown.umd.js",
+  "module": "dist/vue-countdown.esm.js",
+  "unpkg": "dist/vue-countdown.min.js",
   "browser": {
-    "./sfc": "src/vue-cutdown.vue"
+    "./sfc": "src/vue-countdown.vue"
   },
   "scripts": {
     "dev": "vue-styleguidist server",
     "test": "jest --verbose",
     "doc": "vue-styleguidist build",
     "build": "npm run build:unpkg & npm run build:es & npm run build:umd & npm run doc",
-    "build:umd": "rollup --config build/rollup.config.js --format umd --file dist/vue-cutdown.umd.js",
-    "build:es": "rollup --config build/rollup.config.js --format es --file dist/vue-cutdown.esm.js",
-    "build:unpkg": "rollup --config build/rollup.config.js --format iife --file dist/vue-cutdown.min.js",
+    "build:umd": "rollup --config build/rollup.config.js --format umd --file dist/vue-countdown.umd.js",
+    "build:es": "rollup --config build/rollup.config.js --format es --file dist/vue-countdown.esm.js",
+    "build:unpkg": "rollup --config build/rollup.config.js --format iife --file dist/vue-countdown.min.js",
     "stdver": "standard-version -m '[skip ci] chore(release): v%s'",
     "release": "gren release --override"
   },

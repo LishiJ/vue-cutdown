@@ -5,7 +5,7 @@ then
   exit 1
 fi
 
-url=https://api.github.com/repos/seiwhale/vue-cutdown/releases/latest
+url=https://api.github.com/repos/seiwhale/vue-countdown/releases/latest
 resp_tmp_file=resp.tmp
 
 curl -H "Authorization: token $GITHUB_TOKEN" $url > $resp_tmp_file
@@ -13,7 +13,7 @@ curl -H "Authorization: token $GITHUB_TOKEN" $url > $resp_tmp_file
 html_url=$(sed -n 5p $resp_tmp_file | sed 's/\"html_url\"://g' | awk -F '"' '{print $2}')
 body=$(grep body < $resp_tmp_file | sed 's/\"body\"://g;s/\"//g')
 
-msg='{"msgtype": "markdown", "markdown": {"title": "vue-cutdown更新", "text": "@所有人\n# [vue-cutdown]('$html_url')\n'$body'"}}'
+msg='{"msgtype": "markdown", "markdown": {"title": "vue-countdown更新", "text": "@所有人\n# [vue-countdown]('$html_url')\n'$body'"}}'
 
 curl -X POST https://oapi.dingtalk.com/robot/send\?access_token\=$DINGTALK_ROBOT_TOKEN -H 'Content-Type: application/json' -d "$msg"
 

@@ -1,11 +1,11 @@
 // Import vue component
-import Component from './vue-cutdown.vue'
+import Component from './vue-countdown.vue'
 
 // install function executed by Vue.use()
 export function install(Vue) {
   if (install.installed) return
   install.installed = true
-  Vue.component('VueCutdown', Component)
+  Vue.component('VueCountdown', Component)
 }
 
 // Create module definition for Vue.use()

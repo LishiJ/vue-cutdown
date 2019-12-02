@@ -41,7 +41,7 @@ module.exports = {
   styleguideDir: 'docs',
   pagePerSection: true,
   ribbon: {
-    url: 'https://github.com/seiwhale/vue-cutdown'
+    url: 'https://github.com/seiwhale/vue-countdown'
   },
   sections,
   webpackConfig: {

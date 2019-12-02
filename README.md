@@ -1,9 +1,9 @@
 # vue-countdown
 
-[![Build Status](https://badgen.net/travis/seiwhale/vue-cutdown/master)](https://travis-ci.org/seiwhale/vue-cutdown)
-[![NPM Download](https://badgen.net/npm/dm/@crv/vue-cutdown)](https://www.npmjs.com/package/@crv/vue-cutdown)
-[![NPM Version](https://badgen.net/npm/v/@crv/vue-cutdown)](https://www.npmjs.com/package/@crv/vue-cutdown)
-[![NPM License](https://badgen.net/npm/license/@crv/vue-cutdown)](https://github.com/seiwhale/vue-cutdown/blob/master/LICENSE)
+[![Build Status](https://badgen.net/travis/seiwhale/vue-countdown/master)](https://travis-ci.org/seiwhale/vue-countdown)
+[![NPM Download](https://badgen.net/npm/dm/@crv/vue-countdown)](https://www.npmjs.com/package/@crv/vue-countdown)
+[![NPM Version](https://badgen.net/npm/v/@crv/vue-countdown)](https://www.npmjs.com/package/@crv/vue-countdown)
+[![NPM License](https://badgen.net/npm/license/@crv/vue-countdown)](https://github.com/seiwhale/vue-countdown/blob/master/LICENSE)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](https://github.com/seiwhale/vue-countdown/pulls)
 [![Automated Release Notes by gren](https://img.shields.io/badge/%F0%9F%A4%96-release%20notes-00B2EE.svg)](https://github-tools.github.io/github-release-notes/)
 
@@ -33,23 +33,23 @@
 | Prop name      | Type    | Default        | Description                      |
 | -------------- | ------- | -------------- | -------------------------------- |
 | currentTime    | number  | now            | Current time(server time better) |
-| startTime      | number  | now            | Countdown start time               |
-| endTime        | number  | now            | Countdown end time                 |
-| startText      | string  | Distance Start | text before countdown              |
-| runningText    | string  | Distance End   | text running countdown             |
-| endText        | string  | It's over      | text after countdown               |
+| startTime      | number  | now            | Countdown start time             |
+| endTime        | number  | now            | Countdown end time               |
+| startText      | string  | Distance Start | text before countdown            |
+| runningText    | string  | Distance End   | text running countdown           |
+| endText        | string  | It's over      | text after countdown             |
 | dayTxt         | string  | day(s)         | day_text                         |
 | hourTxt        | string  | :              | hour_text                        |
 | minutesTxt     | string  | :              | minutes_text                     |
 | secondsTxt     | string  | :              | seconds_text                     |
 | showTip        | boolean | true           | tip message display              |
-| showTimeBefore | boolean | true           | before countdown show time         |
-| showTimeAfter  | boolean | true           | after countdown show time          |
+| showTimeBefore | boolean | true           | before countdown show time       |
+| showTimeAfter  | boolean | true           | after countdown show time        |
 
 ### Events
 
-| Event name | Type     | Description            |
-| ---------- | -------- | ---------------------- |
+| Event name | Type     | Description              |
+| ---------- | -------- | ------------------------ |
 | onStart    | Function | countdown start callback |
 | onEnd      | Function | countdown end callback   |
 

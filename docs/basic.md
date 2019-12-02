@@ -2,7 +2,7 @@
 
 ```vue
 <template>
-  <vue-cutdown :endTime="endTime"/>
+  <vue-countdown :endTime="endTime"/>
 </template>
 
 <script>
@@ -20,7 +20,7 @@ export default {
 
 ```vue
 <template>
-  <vue-cutdown 
+  <vue-countdown 
     :endTime="endTime"
     :startText="startText"
     :runingText="runingText"
@@ -54,7 +54,7 @@ export default {
 
 ```vue
 <template>
-  <vue-cutdown 
+  <vue-countdown 
     :startText="startText"
     :runingText="runingText"
     :endText="endText"
@@ -84,4 +84,4 @@ export default {
 </script>
 ```
 
-[查看更多配置项 >>](https://github.com/seiwhale/vue-cutdown)
+[查看更多配置项 >>](https://github.com/seiwhale/vue-countdown)

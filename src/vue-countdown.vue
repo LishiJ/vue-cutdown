@@ -1,20 +1,20 @@
 <template>
-  <p class="vue-cutdown">
+  <p class="vue-countdown">
     <!-- Tip Text -->
     <span v-if="showTip">
       <span>{{ tipText }}{{ tipSepartor }}</span>
     </span>
     <!-- Time -->
     <span :hidden="hiddenTime">
-      <span v-if="cutdown.day > 0">
-        <span>{{ cutdown.day }}</span>
+      <span v-if="countdown.day > 0">
+        <span>{{ countdown.day }}</span>
         <i>{{ dayTxt }}</i>
       </span>
-      <span>{{ cutdown.hour }}</span>
+      <span>{{ countdown.hour }}</span>
       <i>{{ hourTxt }}</i>
-      <span>{{ cutdown.minutes }}</span>
+      <span>{{ countdown.minutes }}</span>
       <i>{{ minutesTxt }}</i>
-      <span>{{ cutdown.seconds }}</span>
+      <span>{{ countdown.seconds }}</span>
     </span>
   </p>
 </template>
@@ -23,17 +23,17 @@
 const now = new Date().getTime()
 
 export default {
-  name: 'VueCutdown',
+  name: 'Vuecountdown',
   props: {
     /**
-     * before cutdown show time
+     * before countdown show time
      */
     showTimeBefore: {
       type: Boolean,
       default: true
     },
     /**
-     * after cutdown show time
+     * after countdown show time
      */
     showTimeAfter: {
       type: Boolean,
@@ -126,30 +126,30 @@ export default {
   },
   data() {
     return {
-      cutdown: {
+      countdown: {
         day: 0,
         hour: '00',
         minutes: '00',
         seconds: '00'
       },
-      cutdown_type: 'start',
+      countdown_type: 'start',
       timer: null,
       current: null
     }
   },
   computed: {
     tipText() {
-      return this.cutdown_type === 'start'
+      return this.countdown_type === 'start'
         ? this.startText
-        : this.cutdown_type === 'run'
+        : this.countdown_type === 'run'
         ? this.runningText
         : this.endText
     },
     hiddenTime() {
-      const {cutdown_type} = this
+      const {countdown_type} = this
       return (
-        (!this.showTimeBefore && cutdown_type === 'start') ||
-        (!this.showTimeAfter && cutdown_type === 'end')
+        (!this.showTimeBefore && countdown_type === 'start') ||
+        (!this.showTimeAfter && countdown_type === 'end')
       )
     },
     current_time() {
@@ -163,7 +163,7 @@ export default {
     }
   },
   mounted() {
-    this.startCutdown()
+    this.startcountdown()
   },
   beforeDestroy() {
     clearInterval(this.timer)
@@ -178,10 +178,10 @@ export default {
       return _stamp
     },
     /**
-     * start cutdown event
+     * start countdown event
      * @public
      */
-    startCutdown() {
+    startcountdown() {
       if (this.end_time <= this.current_time) {
         // It's over
         // When end_time < current_time
@@ -189,7 +189,7 @@ export default {
       } else if (this.current_time < this.start_time) {
         // It's not started
         // When end_time < current_time
-        this.runCutdown(this.start_time, this.current_time, false)
+        this.runcountdown(this.start_time, this.current_time, false)
       } else if (
         this.end_time > this.current_time &&
         this.start_time <= this.current_time
@@ -197,21 +197,21 @@ export default {
         // It's started
         // When end_time > current_time && start_time <= current_time
         this.onStart()
-        this.runCutdown(this.end_time, this.start_time, true)
+        this.runcountdown(this.end_time, this.start_time, true)
       }
     },
     /**
-     * run cutdown event
+     * run countdown event
      * @params end_point {Number}  time end point
      * @params start_point {Number} time start point
      * @params flg {Boolean}
      */
-    runCutdown(end_point, start_point, flg) {
+    runcountdown(end_point, start_point, flg) {
       clearInterval(this.timer)
-      this.cutdown_type = flg ? 'run' : 'start'
-      this.calcCutdown(end_point, start_point)
+      this.countdown_type = flg ? 'run' : 'start'
+      this.calccountdown(end_point, start_point)
       this.timer = setInterval(() => {
-        this.calcCutdown(end_point, (start_point += 1000), flg)
+        this.calccountdown(end_point, (start_point += 1000), flg)
       }, 1000)
     },
     /**
@@ -220,37 +220,37 @@ export default {
      * @params start_point {Number} time start point
      * @params flg {Boolean}
      */
-    calcCutdown(end_point, start_point, flg) {
-      const {cutdown} = this
+    calccountdown(end_point, start_point, flg) {
+      const {countdown} = this
       let time_distance = end_point - start_point
 
       // get day,hour,minutes,seconds
       if (time_distance > 0) {
-        // this.cutdown.show = true;
-        cutdown.day = Math.floor(time_distance / 86400000)
-        time_distance -= cutdown.day * 86400000
-        cutdown.hour = Math.floor(time_distance / 3600000)
-        time_distance -= cutdown.hour * 3600000
-        cutdown.minutes = Math.floor(time_distance / 60000)
-        time_distance -= cutdown.minutes * 60000
-        cutdown.seconds = Math.floor(time_distance / 1000).toFixed(0)
-        time_distance -= cutdown.seconds * 1000
+        // this.countdown.show = true;
+        countdown.day = Math.floor(time_distance / 86400000)
+        time_distance -= countdown.day * 86400000
+        countdown.hour = Math.floor(time_distance / 3600000)
+        time_distance -= countdown.hour * 3600000
+        countdown.minutes = Math.floor(time_distance / 60000)
+        time_distance -= countdown.minutes * 60000
+        countdown.seconds = Math.floor(time_distance / 1000).toFixed(0)
+        time_distance -= countdown.seconds * 1000
         //
-        if (cutdown.hour < 10) {
-          cutdown.hour = '0' + cutdown.hour
+        if (countdown.hour < 10) {
+          countdown.hour = '0' + countdown.hour
         }
-        if (cutdown.minutes < 10) {
-          cutdown.minutes = '0' + cutdown.minutes
+        if (countdown.minutes < 10) {
+          countdown.minutes = '0' + countdown.minutes
         }
-        if (cutdown.seconds < 10) {
-          cutdown.seconds = '0' + cutdown.seconds
+        if (countdown.seconds < 10) {
+          countdown.seconds = '0' + countdown.seconds
         }
       } else if (flg) {
         clearInterval(this.timer)
         this.onEnd()
       } else {
         this.current = this.start_time
-        this.startCutdown()
+        this.startcountdown()
       }
     },
     /**
@@ -259,7 +259,7 @@ export default {
      */
     onStart() {
       console.log('start...')
-      this.cutdown_type = 'run'
+      this.countdown_type = 'run'
       this.$emit('onStart')
     },
     /**
@@ -268,7 +268,7 @@ export default {
      */
     onEnd() {
       console.log('end...')
-      this.cutdown_type = 'end'
+      this.countdown_type = 'end'
       this.$emit('onEnd')
     }
   }
@@ -276,7 +276,7 @@ export default {
 </script>
 
 <style lang="less">
-.cutdown {
+.countdown {
   i {
     font-style: normal;
   }
