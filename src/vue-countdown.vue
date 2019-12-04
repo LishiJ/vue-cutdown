@@ -20,10 +20,8 @@
 </template>
 
 <script>
-const now = new Date().getTime()
-
 export default {
-  name: 'Vuecountdown',
+  name: 'VueCountdown',
   props: {
     /**
      * before countdown show time
@@ -44,21 +42,21 @@ export default {
      */
     currentTime: {
       type: Number,
-      default: now
+      default: new Date().getTime()
     },
     /**
      * Start time
      */
     startTime: {
       type: Number,
-      default: now
+      default: new Date().getTime()
     },
     /**
      * End time
      */
     endTime: {
       type: Number,
-      default: now
+      default: new Date().getTime()
     },
     /**
      * tip message display

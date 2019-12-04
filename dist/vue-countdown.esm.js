@@ -19,9 +19,8 @@
 //
 //
 //
-var now = new Date().getTime();
 var script = {
-  name: 'Vuecountdown',
+  name: 'VueCountdown',
   props: {
     /**
      * before countdown show time
@@ -44,7 +43,7 @@ var script = {
      */
     currentTime: {
       type: Number,
-      "default": now
+      "default": new Date().getTime()
     },
 
     /**
@@ -52,7 +51,7 @@ var script = {
      */
     startTime: {
       type: Number,
-      "default": now
+      "default": new Date().getTime()
     },
 
     /**
@@ -60,7 +59,7 @@ var script = {
      */
     endTime: {
       type: Number,
-      "default": now
+      "default": new Date().getTime()
     },
 
     /**
@@ -445,7 +444,7 @@ __vue_render__._withStripped = true;
 
 var __vue_inject_styles__ = function __vue_inject_styles__(inject) {
   if (!inject) return;
-  inject("data-v-685bc599_0", {
+  inject("data-v-1a96d98b_0", {
     source: ".countdown i {\n  font-style: normal;\n}\n",
     map: {
       "version": 3,
