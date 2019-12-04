@@ -55,7 +55,7 @@
 
 ## Links
 
-- [docs](https://github.io/seiwhale/vue-countdown/)
+- [docs](https://github.com/seiwhale/vue-countdown)
 
 ## Install
 
